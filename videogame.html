@@ -60,7 +60,7 @@ window.onclick = function(event) {
 			<nav class="cl-effect-1" id="cl-effect-1">
 				 <ul>
 					<li><a class="scroll" href="index.html">Home</a></li>
-					<li><a class="scroll" href="#banner-top">Data Analysis Samples</a></li>
+					<li><a class="scroll" href="samples.html">Data Analysis Samples</a></li>
 					<li><a class="scroll" href="#portfolio">Code</a></li>
 					<li><a class="scroll" href="#contact">Contact</a></li>				 
 				</ul>	
@@ -81,15 +81,48 @@ window.onclick = function(event) {
 <div id="about" class="about">
 	<div class="container">
 		<div class="about-info">
-				<h4>Dataset Analyses</h4>
-		 </div>
-		   <div class="about-grids">
-		   	<div class="col-md-6 about-grid">
-		   		<p><a href="osteoblasts.html"</a>  <b>Sample Analysis 1:</b><br>  Differential Expression in Human Osteoblasts Raised in Direct and Indirect Co-cultures with Umbilical Vein Endothelial Cells
-</p>
-				<p><a href="videogame.html"</a> <b>Sample Analysis 2:</b><br>   Videogame Dataset Analysis: Visualization and Linear Regression
+				<h4>Sample Analysis 2: Videogame Sales Dataset <br>
+				</h4>
+				
+				<br> 
+								<u><b>Objectives </b></u>
+<br>
+I had two objectives I sought to reach with this dataset. 
+The first was to visualize the number of game sales per 
+platform so that the relative popularity of each can be 
+easily seen. The second was to gauge the dependence of sales
+from both user and critic reviews by attempting to establish a 
+predictive model for sales based on review data using linear regression.<br><br>
+<a href="/datasets/Video_Games_Sales_as_at_22_Dec_2016.csv" download> 
+<i>Dataset Download »</i> </a><br> <br> 
 
+Using  <a href="/uploads/vg_sales_bargraph.py" download> 
+<i>this python script »</i> </a>
+the plot below was generated showing total sales per console in a region specific manner. 
+<br>
+<a href="images/Platform_Sales.png">
+<img src="images/Platform_Sales.png" style="width:750px;height:450px;">
+</a>
+<br>
+<small>
+The predictive algorithm  and chart below were developed in this script. Uses 75% of the dataset (randomly selected) as the training set and the rest as validation.
+
+
+<br><br>
 </div>
+Critic_Score Coefficient  = 0.031921650860<br>
+User_Score Coefficient  = -0.0390726846176<br>
+Intercept = -1.230921908642375<br>
+
+R squared value: 0.080099583123<br>
+Mean square Error:  3.08043696032<br>
+So 8% of the variability of sales could be explained by review scores.
+The average offset of sales prediction from this model  1.755117363687328 (million). 
+<br>
+<a href="images/actual_vs_predicted_game.png">
+<img src="images/actual_vs_predicted_game.png" style="width:650px;height:450px;">
+</a>
+
 <!--/about-->
 <!--portfolio-->
 					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>

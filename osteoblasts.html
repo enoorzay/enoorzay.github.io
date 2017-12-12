@@ -60,8 +60,8 @@ window.onclick = function(event) {
 			<nav class="cl-effect-1" id="cl-effect-1">
 				 <ul>
 					<li><a class="scroll" href="index.html">Home</a></li>
-					<li><a class="scroll" href="#banner-top">Data Analysis Samples</a></li>
-					<li><a class="scroll" href="#portfolio">Code?</a></li>
+					<li><a class="scroll" href="samples.html">Data Analysis Samples</a></li>
+					<li><a class="scroll" href="#portfolio">Code</a></li>
 					<li><a class="scroll" href="#contact">Contact</a></li>				 
 				</ul>	
 			</nav>			 
@@ -92,6 +92,89 @@ Using  <a href="/uploads/osteo_dataprepper.tsv" download>
 <i>this python script »</i> </a>
 and the Plot.ly library, significant data points were filtered and the plots in figure 1 were drawn for each 
 condition, with significant data points being represented in red. Upon filtering, 1,668 genes from the direct co-culture condition and 656 genes from the indirect condition were deemed DE. 
+<a href="https://plot.ly/~dreezo/41/osteoblasts-in-direct-co-culture-with-human-umbilical-endothelial-cells-vs-in-mo/">
+<img src="images/direct_fold_pval_scatter.png" alt="Volcano Plots" style="width:550px;height:450px;">
+</a>
+<a href="https://plot.ly/~dreezo/43/osteoblasts-in-indirect-co-culture-with-human-umbilical-endothelial-cells-vs-in-/">
+<img src="images/indirect_fold_pval_scatter.png" alt="Volcano Plots" style="width:550px;height:450px;">
+</a>
+<br>
+<small>
+Figure 1 (A): Volcano Plot of Fold Change in Direct Condition
+Selected genes that were differentially expressed in only the direct co-culture,  the indirect co-culture, and in both conditions were then isolated using this bash script to be examined independently.                                                                                                                                
+1(B): Volcano Plot of Fold Change in Indirect Condition
+<br>
+<center>
+<a href= images/osteoven.png>
+<img src="images/osteoven.png" style="width:450px;height:450px;">
+</a>
+<small>Figure 2: Ratios of significant gene findings by condition. </small>
+
+<br>
+</center>
+<small>
+<h4>Clustering Analysis</h4>
+</small>
+</br>
+The set of genes expressed differentially in both conditions was clustered using the the fold changes in each condition as a vector. 
+<br><br>
+<a href= images/osteoHCL_shared_avglinkage.png>
+<img src="images/osteoHCL_shared_avglinkage.png" style="width:50px;height:250px;">
+</a> 
+<a href= images/osteocluster_expview.png>
+<img src="images/osteocluster_expview.png" style="width:500px;height:250px;" align="right">
+</a> 
+
+<br>
+<small>
+Figure 3: Results of hierarchical clustering of genes using average linkage/UPGMA as a distance algorithm (Left). Expression views of k-means clustering results with k = 12. (Right). 
+</small>
+
+<br> <br> 
+K-means clustering with k=12 was chosen for further analysis due to its favorable cluster sizes and similarity within them.
+Of these clusters, cluster 2 was investigated further due to the significant down regulation in one condition and up regulation in 
+the other within its clustered genes. However, no shared pathways or interactions interactions were found between these genes. 
+<br>
+<a href= images/osteocluster2.png>
+<img src="images/osteocluster2.png" style="width:150px;height:230px;">
+</a>
+<br>
+<small>Figure 4: Small heat diagram for 2nd cluster produced from k-means clustering representing change in fold values between conditions. Expression changes significantly in opposite directions
+between conditions.
+
+
+<br><br><br>
+<h4>Clustering Analysis</h4>
+</small>
+<br>
+Using the String-DB gene co-expression networks were found:
+<br><br>
+<a href= images/osteodirect_networkbig.png>
+<img src="images/osteodirect_networkbig.png" style="width:220px;height:230px;" align = "left">
+</a>
+<a href= images/osteoshared_networkbig.png>
+<img src="images/osteoshared_networkbig.png" style="width:220px;height:230px;"align = "right">
+</a>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href= images/osteoindirect_networkbig.png>
+<img src="images/osteoindirect_networkbig.png" style="width:220px;height:230px;">
+</a>
+<br><br><br>
+<small>
+Figure 5: Gene co-expression network for direct co-culture condition exclusive DE genes(left), indirect co-culture condition genes (center), and shared DE gene set (right).
+ Unconnected nodes not shown. 
+</small>
+<br><br>
+
+Due to the much larger amount of genes exclusieve to the direct co-culture sample with umbilical cells, a minimum confidence score of 0.7
+is used for each interaction as opposed to 0.4 in the other conditions to account for noise. However a co-expressive network in this data 
+set is indicated due to the 45 edges within it as opposed to an expected number of 8 for a random set of proteins of similar size.
+
+This is also true for the shared gene network with 25 edges existing against an expected-value of 2. The edges on the indirect condition 
+however do not meet the significance threshold with 18 edges with an expected-value of 12 giving a p-value 0.0581.
+
 
 </div>
 <!--/about-->
