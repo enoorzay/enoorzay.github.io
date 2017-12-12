@@ -59,9 +59,9 @@ window.onclick = function(event) {
 		<span class="menu"> </span> 
 			<nav class="cl-effect-1" id="cl-effect-1">
 				 <ul>
-					<li><a class="scroll" href="#banner-top">Home</a></li>
-					<li><a class="scroll" href="samples.html">Data Analysis Samples</a></li>
-					<li><a class="scroll" href="">Code?</a></li>
+					<li><a class="scroll" href="index.html">Home</a></li>
+					<li><a class="scroll" href="#banner-top">Data Analysis Samples</a></li>
+					<li><a class="scroll" href="#portfolio">Code?</a></li>
 					<li><a class="scroll" href="#contact">Contact</a></li>				 
 				</ul>	
 			</nav>			 
@@ -81,66 +81,17 @@ window.onclick = function(event) {
 <div id="about" class="about">
 	<div class="container">
 		<div class="about-info">
-				<h3>Noorzay Portfolio</h3>
-				<h4>Professional Summary</h4>
-				<p>Detail oriented engineering professional motivated to utilize background in computer science and statistics to develop
-solutions to complex problems using software and analytics.</p>
-		 </div>
-		   <div class="about-grids">
-		   	<div class="col-md-6 about-grid">
-		   		<u><h4>Core Qualifications</h4></u>
-		   		<p>● Knowledge of computer science concepts such as
-applications of data structures and algorithms, and the
-Unix command line.</p>
-				<p>● Good programming practices such as proper
-documentation and revision control.</p>
-				<p>● Experienced in generating models to visualize data
-clearly and concisely.</p>
-				<p>● Familiar with frameworks such as Hadoop and Spark
-for processing big data.</p><br>
-<h4><u>Experience</h4></u>
-<br>2015-2016 
-<br>
-	<big>   California Institute of Biomedical Research<br></big>
-<i><u>Assistant Lab and EHS Associate - La Jolla, CA</i><br></u>
-<small>
-● Assisted with common laboratory procedures.<br>
-● Managed and prepared media and antibiotics.<br>
-● Ensured adherence to EHS guidelines within laboratory spaces.<br>
-● Managed, and maintained database of Data Sheets of compounds present in the
-building.<br>		  </small>
+				<h4>Sample Analysis 1: Osteoblast Dataset</h4><br>
+				Analysis was done on a data set containing expression data from human osteoblasts that were raised in direct co-culture with umbilical vein endothelial cells, and raised in indirect co-culture with umbilical vein endothelial cells to find genes expressed differentially in each condition.  
 <br><br>
-
-		   	</div>
-
-		   	<div class="col-md-6 about-grid">
-		   		<h4> </h4>
-		   		<p>● Proficient in Python, SQL, Perl, C++, Java, R, Scala,
-and Bash, as well as libraries such as TensorFlow,
-Scikit-Learn, and Pandas.</p>
-		   		<p>● Strong background in statistical analysis, machine
-learning concepts, algorithms and applications.</p>
-		   		<p>● Experience working with and developing databases
-and pipelines.</p><br>
-		   		<p>● Strong organizational, time management, and communication skills.</p>
-
-				<br><br><br>
-<h4><u>Education</h4></u>
-<br>2012-2017
-<br>
-	<big>University of California, San Diego<br></big>
-<i><u>Bioengineering - Bioinformatics</i><br></u>
-<small>
-● Gained experience developing software in a team environment.<br>
-● Developed efficient programming practices.<br>
-● Honed skills in data-mining and statistical analysis.<br>
-● Implemented machine learning algorithms to develop predictive models.<br>		  </small>
-
-		   	</div>
-			
-		   	<div class="clearfix"> </div>
-		   </div>
-	</div>
+<a href="/datasets/cocultured_umbilical_endo_cells.tsv" download> 
+<i>Dataset Download »</i> </a><br> <br> 
+The data set contained normalized fold change values and adjusted p-values for each condition against a set of osteoblasts raised 
+in monoculture. Due to the large sample set, a p-value of 0.01 was used to identify differentially expressed (DE) genes.   <br><br />
+Using  <a href="/uploads/osteo_dataprepper.tsv" download> 
+<i>this python script »</i> </a>
+and the Plot.ly library, significant data points were filtered and the plots in figure 1 were drawn for each 
+condition, with significant data points being represented in red. Upon filtering, 1,668 genes from the direct co-culture condition and 656 genes from the indirect condition were deemed DE. 
 
 </div>
 <!--/about-->
