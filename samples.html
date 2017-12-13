@@ -23,21 +23,6 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 <!--start-smoth-scrolling-->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
@@ -61,7 +46,6 @@ window.onclick = function(event) {
 				 <ul>
 					<li><a class="scroll" href="index.html">Home</a></li>
 					<li><a class="scroll" href="#banner-top">Data Analysis Samples</a></li>
-					<li><a class="scroll" href="#portfolio">Code</a></li>
 					<li><a class="scroll" href="#contact">Contact</a></li>				 
 				</ul>	
 			</nav>			 

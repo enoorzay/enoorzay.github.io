@@ -445,6 +445,16 @@ ul.callbacks_tabs.callbacks4_tabs {
   padding: 1.5em 0 0em;
   line-height: 1.7em;
 }
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
 /*--pricing-tables--*/
 .pricing-grids {
   width: 100%;

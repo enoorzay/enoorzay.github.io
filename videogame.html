@@ -18,26 +18,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lora:400italic' rel='stylesheet' type='text/css'>
 <script src="http//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script> 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
+<script src="https://www.w3schools.com/lib/w3.js"></script>
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 <!--start-smoth-scrolling-->
 		<script type="text/javascript" src="js/move-top.js"></script>
 		<script type="text/javascript" src="js/easing.js"></script>
@@ -61,7 +43,6 @@ window.onclick = function(event) {
 				 <ul>
 					<li><a class="scroll" href="index.html">Home</a></li>
 					<li><a class="scroll" href="samples.html">Data Analysis Samples</a></li>
-					<li><a class="scroll" href="#portfolio">Code</a></li>
 					<li><a class="scroll" href="#contact">Contact</a></li>				 
 				</ul>	
 			</nav>			 
@@ -85,27 +66,64 @@ window.onclick = function(event) {
 				</h4>
 				
 				<br> 
-								<u><b>Objectives </b></u>
+								<u><b>Objectives</b></u>
 <br>
-I had two objectives I sought to reach with this dataset. 
-The first was to visualize the number of game sales per 
-platform so that the relative popularity of each can be 
-easily seen. The second was to gauge the dependence of sales
-from both user and critic reviews by attempting to establish a 
-predictive model for sales based on review data using linear regression.<br><br>
+I had two objectives while mining this dataset. 
+The first was to visualize and present game sale, region, and platform data 
+platform to see what novel observations could be made. The second was to gauge the relationship of sales
+and game reviews by attempting to establish a 
+predictive model for sales using linear regression with review scores.<br><br>
 <a href="/datasets/Video_Games_Sales_as_at_22_Dec_2016.csv" download> 
 <i>Dataset Download »</i> </a><br> <br> 
 
 Using  <a href="/uploads/vg_sales_bargraph.py" download> 
 <i>this python script »</i> </a>
-the plot below was generated showing total sales per console in a region specific manner. 
+the plot below was generated showing total sales per console in a region specific manner.
 <br>
 <a href="plotly/Platform_Sales.html">
 <img src="images/Platform_Sales.png" style="width:750px;height:450px;">
 </a>
+<i>Interactable versions of all plots are available on click </i>
 <br>
-<small>
+Next I wanted to examine how many total games each region purchases each year. This information could be used to deduce
+which markets are most viable, which are growing, and which are sinking.	
+<br>
+<a href="plotly/sales_by_year_region.html">
+<img src="images/sales_by_year_region.png" style="width:700px;height:500px;">
+</a>
+<br>
+As we can see by the figures, North American audiences dominate the market, which peaked around 2008 and has since fallen significantly. 
+Although this shows us the general trend of the market, it does not give much information on the viability between markets as the regional groups vary greatly in population size.
+<br><br>
+Using the <u><a href="https://esa.un.org/unpd/wpp/DataQuery/"> United Nations Population Division Website</a></u> I prepared <u><a href="datasets/populationdata.csv"> this csv file </a></u> 
+with relevant population info spanning the time period of interest to normalize the data relative to population size. 
+
+<br>
+<a href="plotly/norm_sales_by_year_region.html">
+<img src="images/norm_sales_by_year_region.png" style="width:700px;height:500px;">
+</a>
+<br>
+We now see some very different results, with Japan being much closer to North American markets, and Europe having a smaller market density.
+
+<br><br>
+
+Looking at genre statistics could reveal some interesting insight on what kind of games are popular where. (and vice versa). I'll first try to take a look at simply what is most popular in each region. 
+<br>
+<a href="plotly/regional_games_donut.html">
+<img src="images/regional_games_donut.png" style="width:700px;height:400px;">
+</a>
+<br>
+Sports and Action Games hold the #1 and 2 spot for each region except for Japan, where RPGS are over double the second highest genre (Action). RPGs however, do not even hold a top 5 position in any other area. 
+
+<br>
+Lets add time as a variable and take a look at trends in each region.
+<br>
+
+
+<br>
+<hr><br>
 The predictive algorithm  and chart below were developed in this script. Uses 75% of the dataset (randomly selected) as the training set and the rest as validation.
+<small>
 
 
 <br><br>
@@ -113,8 +131,11 @@ The predictive algorithm  and chart below were developed in this script. Uses 75
 Critic_Score Coefficient  = 0.031921650860<br>
 User_Score Coefficient  = -0.0390726846176<br>
 Intercept = -1.230921908642375<br>
+Model:
+<br><br>
+<img src="images/vgcriticmodel.png" >
 
-R squared value: 0.080099583123<br>
+<br><br>R squared value: 0.080099583123<br>
 Mean square Error:  3.08043696032<br>
 So 8% of the variability of sales could be explained by review scores.
 The average offset of sales prediction from this model  1.755117363687328 (million). 
@@ -122,7 +143,10 @@ The average offset of sales prediction from this model  1.755117363687328 (milli
 <a href="plotly/game_sales_vs_prediction.html">
 <img src="images/actual_vs_predicted_game.png" style="width:650px;height:450px;">
 </a>
-
+<hr>
+<br><br><u>
+<big> Currently Working On </big> </u><br><br>
+Building a logistical regression model with either rating or genre as the target variable. 
 <!--/about-->
 <!--portfolio-->
 					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
